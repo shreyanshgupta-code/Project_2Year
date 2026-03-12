@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Self-Correcting Reasoning System</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>Self-Correcting Reasoning System</h1>
+
+<form method="post">
+<input type="text" name="question" placeholder="Enter your question..." required>
+<button type="submit">Ask</button>
+</form>
+
+{% if results %}
+
+<h2>Generated Reasoning Paths</h2>
+
+{% for r in results %}
+
+<div class="card">
+
+<p class="score">Score: {{r.score}}</p>
+
+<p>{{r.reasoning}}</p>
+
+</div>
+
+{% endfor %}
+
+<h2>Best Reasoning</h2>
+
+<div class="card best">
+
+<p class="score">Score: {{best.score}}</p>
+
+<p>{{best.reasoning}}</p>
+
+</div>
+
+{% endif %}
+
+</div>
+
+</body>
+</html>
