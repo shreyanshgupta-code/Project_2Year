@@ -1,3 +1,0 @@
-MODEL = "llama3"
-
-NUM_REASONING_PATHS = 5
